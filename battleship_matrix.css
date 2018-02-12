@@ -1,0 +1,14 @@
+body{font-family: 'Roboto', sans-serif;}
+.container{
+  max-width:1170px;
+  margin:0 auto;
+  display:block;
+  padding:30px;
+  text-align: center;
+}
+
+h6{
+  font-weight: 300;
+  font-size:0.9rem;
+}
+h3{font-weight:900;}
