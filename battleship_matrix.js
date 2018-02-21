@@ -3,12 +3,11 @@
 var sea = [];
 var row = [];
 
-
-for ( i = 0 ; i < 100 ; i++ ){
+for ( i = 0 ; i < 100; i++ ){
   row.push(0);
 }
 for ( i = 0 ; i < 100 ; i++ ){
-  sea.push(row);
+  sea.push(row.slice());
 }
 
 console.log('WELCOME TO BATTLESHIP MATRIX\n');
@@ -41,12 +40,9 @@ var des2 = sea[90][4] = 1;
 
 console.log(sea);
 
-// car1 & car2 & car3 & car4 & car5 & bat1 & bat2 & bat3 & bat4 & cru1 & cru2 & cru3 & sub1 & sub2 & sub3 & des1 & des2 = 1;
+ship = sea[90][3];
 
-ship = sea[0][0];
-
-
-if ( ship == car1 || car2 || car3 || car4 || car5 || bat1 || bat2 || bat3 || bat4 || cru1 || cru2 || cru3 || sub1 || sub2 || sub3 || des1 || des2 ){
+if ( ship == 1 ){
   console.log('You have sinked part of the ship! :D');
 }
 else{
