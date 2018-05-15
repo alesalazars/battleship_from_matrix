@@ -61,77 +61,71 @@ button.addEventListener('click', function(){
 
   console.log("value of ask: " + ask);
 
-  for ( i = 0 ; i <= carrier.length - 1; i++ ){
-    for ( j = 0 ; j <= carrier[i].length; j++ ){
-      if( x == carrier[i][0] && y == carrier[i][1] ){
-        console.log("You've sinked the Carrier ship! :D");
-        sea[28][5] = "x";
-        sea[28][6] = "x";
-        sea[28][7] = "x";
-        sea[28][8] = "x";
-        sea[28][9] = "x";
-      }
-      else {
-        console.log("You've missed :(");
-      }
-    }
+  if( ask == 1 ){
+
+        for ( i = 0 ; i <= carrier.length - 1; i++ ){
+          for ( j = 0 ; j <= carrier[i].length; j++ ){
+            if( x == carrier[i][0] && y == carrier[i][1] ){
+              console.log("You've sinked the Carrier ship! :D");
+              sea[28][5] = "x";
+              sea[28][6] = "x";
+              sea[28][7] = "x";
+              sea[28][8] = "x";
+              sea[28][9] = "x";
+            }
+          }
+        }
+
+        for ( i = 0 ; i <= battleship.length -1 ; i++ ){
+          for ( j = 0 ; j <= battleship[i].length ; j++ ){
+            if( x == battleship[i][0] && y == battleship[i][1] ){
+              console.log("You've sinked the Battleship ship! :D");
+              sea[0][3] = "x";
+              sea[1][3] = "x";
+              sea[2][3] = "x";
+              sea[3][3] = "x";
+            }
+          }
+        }
+
+        for ( i = 0 ; i <= cruiser.length - 1; i++ ){
+          for ( j = 0 ; j <= cruiser[i].length ; j++ ){
+            if( x == cruiser[i][0] && y == cruiser[i][1] ){
+              console.log("You've sinked the Cruiser ship! :D");
+              sea[43][88] = "x";
+              sea[43][89] = "x";
+              sea[43][90] = "x";
+            }
+          }
+        }
+
+        for ( i = 0 ; i <= submarine.length - 1 ; i++ ){
+          for ( j = 0 ; j <= submarine[i].length ; j++ ){
+            if( x == submarine[i][0] && y == submarine[i][1] ){
+              console.log("You've sinked the Submarine ship! :D");
+              sea[14][0] = "x";
+              sea[14][1] = "x";
+              sea[14][2] = "x";
+            }
+          }
+        }
+
+        for ( i = 0 ; i <= destroyer.length - 1; i++ ){
+          for ( j = 0 ; j <= destroyer[i].length ; j++ ){
+            if( x == destroyer[i][0] && y == destroyer[i][1] ){
+              console.log("You've sinked the Destroyer ship! :D");
+              sea[90][3] = "x";
+              sea[90][4] = "x";
+            }
+          }
+        }
+
+  }else if ( ask == "x" ){
+    console.log("You've already sinked this ship, keep trying")
+  }else{
+    console.log("You've missed :(");
   }
 
-  for ( i = 0 ; i <= battleship.length -1 ; i++ ){
-    for ( j = 0 ; j <= battleship[i].length ; j++ ){
-      if( x == battleship[i][0] && y == battleship[i][1] ){
-        console.log("You've sinked the Battleship ship! :D");
-        sea[0][3] = "x";
-        sea[1][3] = "x";
-        sea[2][3] = "x";
-        sea[3][3] = "x";
-      }
-      else {
-        console.log("You've missed :(");
-      }
-    }
-  }
-
-  for ( i = 0 ; i <= cruiser.length - 1; i++ ){
-    for ( j = 0 ; j <= cruiser[i].length ; j++ ){
-      if( x == cruiser[i][0] && y == cruiser[i][1] ){
-        console.log("You've sinked the Cruiser ship! :D");
-        sea[43][88] = "x";
-        sea[43][89] = "x";
-        sea[43][90] = "x";
-      }
-      else {
-        console.log("You've missed :(");
-      }
-    }
-  }
-
-  for ( i = 0 ; i <= submarine.length - 1 ; i++ ){
-    for ( j = 0 ; j <= submarine[i].length ; j++ ){
-      if( x == submarine[i][0] && y == submarine[i][1] ){
-        console.log("You've sinked the Submarine ship! :D");
-        sea[14][0] = "x";
-        sea[14][1] = "x";
-        sea[14][2] = "x";
-      }
-      else {
-        console.log("You've missed :(");
-      }
-    }
-  }
-
-  for ( i = 0 ; i <= destroyer.length - 1; i++ ){
-    for ( j = 0 ; j <= destroyer[i].length ; j++ ){
-      if( x == destroyer[i][0] && y == destroyer[i][1] ){
-        console.log("You've sinked the Destroyer ship! :D");
-        sea[90][3] = "x";
-        sea[90][4] = "x";
-      }
-      else {
-        console.log("You've missed :(");
-      }
-    }
-  }
 
   // for ( i = 0 ; i <= ships.length -1 ; i++ ){
   //   for ( j = 0 ; j <= ships[i].length -1 ; j++ ){
