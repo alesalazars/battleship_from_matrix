@@ -1,10 +1,4 @@
 /* FIND SINKED SHIP IN A MATRIX */
-var array = [ [1,2] , [3,4]];
-for ( i=0 ; i<array.length ; i++ ){
-  for ( j=0 ; j<array[i].length ; j++ ){
-    console.log(array[i][0]);
-  }
-}
 
 var sea = [];
 var row = [];
@@ -46,7 +40,7 @@ var des1 = sea[90][3] = 1;
 var des2 = sea[90][4] = 1;
 var destroyer = [ [90, 3], [90, 4] ];
 
-var ships = [ carrier, battleship, cruiser, submarine, destroyer ];
+// var ships = [ carrier, battleship, cruiser, submarine, destroyer ];
 
 console.log(sea);
 
