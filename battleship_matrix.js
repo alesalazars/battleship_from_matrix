@@ -15,45 +15,33 @@ for ( i = 0 ; i < 100 ; i++ ){
 console.log('WELCOME TO BATTLESHIP MATRIX');
 
 
-// Set coordenates of the ships and put 1's on them
+// Set coordenates for the ships and put 1's in them
 
 //Carrier ship
 var carrier = [ [28, 5], [28, 6], [28, 7], [28, 8], [28, 9] ];
-for ( i = 0 ; i <= carrier.length - 1; i++ ){
-  for ( j = 0 ; j <= carrier[i].length; j++ ){
-    sea[ carrier[i][0] ][ carrier[i][1] ] = 1;
-  }
-}
+fillWithOnes(carrier);
 
 //Battleship ship
 var battleship = [ [0, 3], [1, 3], [2, 3], [3, 3] ];
-for ( i = 0 ; i <= battleship.length - 1; i++ ){
-  for ( j = 0 ; j <= battleship[i].length; j++ ){
-    sea[ battleship[i][0] ][ battleship[i][1] ] = 1;
-  }
-}
+fillWithOnes(battleship);
 
 //Cruiser ship
 var cruiser = [ [43, 88], [43, 89], [43, 90] ];
-for ( i = 0 ; i <= cruiser.length - 1; i++ ){
-  for ( j = 0 ; j <= cruiser[i].length; j++ ){
-    sea[ cruiser[i][0] ][ cruiser[i][1] ] = 1;
-  }
-}
+fillWithOnes(cruiser);
 
 //Submarine ship
 var submarine = [ [14, 0], [14, 1], [14, 2] ];
-for ( i = 0 ; i <= submarine.length - 1; i++ ){
-  for ( j = 0 ; j <= submarine[i].length; j++ ){
-    sea[ submarine[i][0] ][ submarine[i][1] ] = 1;
-  }
-}
+fillWithOnes(submarine);
 
 //Destroyer ship
 var destroyer = [ [90, 3], [90, 4] ];
-for ( i = 0 ; i <= destroyer.length - 1; i++ ){
-  for ( j = 0 ; j <= destroyer[i].length; j++ ){
-    sea[ destroyer[i][0] ][ destroyer[i][1] ] = 1;
+fillWithOnes(destroyer);
+
+function fillWithOnes(shipName){
+  for ( i = 0 ; i <= shipName.length - 1; i++ ){
+    for ( j = 0 ; j <= shipName[i].length; j++ ){
+      sea[ shipName[i][0] ][ shipName[i][1] ] = 1;
+    }
   }
 }
 
