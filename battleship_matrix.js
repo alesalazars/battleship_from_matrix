@@ -1,5 +1,7 @@
 /* FIND SINKED SHIP IN A MATRIX */
 
+
+// First I create the multidimentional array of 100x100
 var sea = [];
 var row = [];
 
@@ -10,40 +12,56 @@ for ( i = 0 ; i < 100 ; i++ ){
   sea.push(row.slice());
 }
 
-console.log('WELCOME TO BATTLESHIP MATRIX\n');
+console.log('WELCOME TO BATTLESHIP MATRIX');
+
+
+// Set coordenates of the ships and put 1's on them
 
 //Carrier ship
-var car1 = sea[28][5] = 1;
-var car2 = sea[28][6] = 1;
-var car3 = sea[28][7] = 1;
-var car4 = sea[28][8] = 1;
-var car5 = sea[28][9] = 1;
 var carrier = [ [28, 5], [28, 6], [28, 7], [28, 8], [28, 9] ];
-//Battleship ship
-var bat1 = sea[0][3] = 1;
-var bat2 = sea[1][3] = 1;
-var bat3 = sea[2][3] = 1;
-var bat4 = sea[3][3] = 1;
-var battleship = [ [0, 3], [1, 3], [2, 3], [3, 3] ];
-//Cruiser ship
-var cru1 = sea[43][88] = 1;
-var cru2 = sea[43][89] = 1;
-var cru3 = sea[43][90] = 1;
-var cruiser = [ [43, 88], [43, 89], [43, 90] ];
-//Submarine ship
-var sub1 = sea[14][0] = 1;
-var sub2 = sea[14][1] = 1;
-var sub3 = sea[14][2] = 1;
-var submarine = [ [14, 0], [14, 1], [14, 2] ];
-//Destroyer ship
-var des1 = sea[90][3] = 1;
-var des2 = sea[90][4] = 1;
-var destroyer = [ [90, 3], [90, 4] ];
+for ( i = 0 ; i <= carrier.length - 1; i++ ){
+  for ( j = 0 ; j <= carrier[i].length; j++ ){
+    sea[ carrier[i][0] ][ carrier[i][1] ] = 1;
+  }
+}
 
-// var ships = [ carrier, battleship, cruiser, submarine, destroyer ];
+//Battleship ship
+var battleship = [ [0, 3], [1, 3], [2, 3], [3, 3] ];
+for ( i = 0 ; i <= battleship.length - 1; i++ ){
+  for ( j = 0 ; j <= battleship[i].length; j++ ){
+    sea[ battleship[i][0] ][ battleship[i][1] ] = 1;
+  }
+}
+
+//Cruiser ship
+var cruiser = [ [43, 88], [43, 89], [43, 90] ];
+for ( i = 0 ; i <= cruiser.length - 1; i++ ){
+  for ( j = 0 ; j <= cruiser[i].length; j++ ){
+    sea[ cruiser[i][0] ][ cruiser[i][1] ] = 1;
+  }
+}
+
+//Submarine ship
+var submarine = [ [14, 0], [14, 1], [14, 2] ];
+for ( i = 0 ; i <= submarine.length - 1; i++ ){
+  for ( j = 0 ; j <= submarine[i].length; j++ ){
+    sea[ submarine[i][0] ][ submarine[i][1] ] = 1;
+  }
+}
+
+//Destroyer ship
+var destroyer = [ [90, 3], [90, 4] ];
+for ( i = 0 ; i <= destroyer.length - 1; i++ ){
+  for ( j = 0 ; j <= destroyer[i].length; j++ ){
+    sea[ destroyer[i][0] ][ destroyer[i][1] ] = 1;
+  }
+}
+
 
 console.log(sea);
 
+
+// Clicking on the button runs the function that checks for a coincidence
 
 var button = document.getElementById('submitPositions');
 
@@ -61,11 +79,13 @@ button.addEventListener('click', function(){
           for ( j = 0 ; j <= carrier[i].length; j++ ){
             if( x == carrier[i][0] && y == carrier[i][1] ){
               console.log("You've sinked the Carrier ship! :D");
-              sea[28][5] = "x";
-              sea[28][6] = "x";
-              sea[28][7] = "x";
-              sea[28][8] = "x";
-              sea[28][9] = "x";
+
+              for ( k = 0 ; k <= carrier.length - 1; k++ ){
+                for ( l = 0 ; l <= carrier[k].length; l++ ){
+                  sea[ carrier[k][0] ][ carrier[k][1] ] = "x";
+                }
+              }
+
             }
           }
         }
@@ -74,10 +94,13 @@ button.addEventListener('click', function(){
           for ( j = 0 ; j <= battleship[i].length ; j++ ){
             if( x == battleship[i][0] && y == battleship[i][1] ){
               console.log("You've sinked the Battleship ship! :D");
-              sea[0][3] = "x";
-              sea[1][3] = "x";
-              sea[2][3] = "x";
-              sea[3][3] = "x";
+
+              for ( k = 0 ; k <= battleship.length -1 ; k++ ){
+                for ( l = 0 ; l <= battleship[k].length ; l++ ){
+                  sea[ battleship[k][0] ][ battleship[k][1] ] = "x";
+                }
+              }
+
             }
           }
         }
@@ -86,9 +109,13 @@ button.addEventListener('click', function(){
           for ( j = 0 ; j <= cruiser[i].length ; j++ ){
             if( x == cruiser[i][0] && y == cruiser[i][1] ){
               console.log("You've sinked the Cruiser ship! :D");
-              sea[43][88] = "x";
-              sea[43][89] = "x";
-              sea[43][90] = "x";
+              
+              for ( k = 0 ; k <= cruiser.length -1 ; k++ ){
+                for ( l = 0 ; l <= cruiser[k].length ; l++ ){
+                  sea[ cruiser[k][0] ][ cruiser[k][1] ] = "x";
+                }
+              }
+
             }
           }
         }
@@ -97,9 +124,13 @@ button.addEventListener('click', function(){
           for ( j = 0 ; j <= submarine[i].length ; j++ ){
             if( x == submarine[i][0] && y == submarine[i][1] ){
               console.log("You've sinked the Submarine ship! :D");
-              sea[14][0] = "x";
-              sea[14][1] = "x";
-              sea[14][2] = "x";
+              
+              for ( k = 0 ; k <= submarine.length -1 ; k++ ){
+                for ( l = 0 ; l <= submarine[k].length ; l++ ){
+                  sea[ submarine[k][0] ][ submarine[k][1] ] = "x";
+                }
+              }
+
             }
           }
         }
@@ -108,55 +139,22 @@ button.addEventListener('click', function(){
           for ( j = 0 ; j <= destroyer[i].length ; j++ ){
             if( x == destroyer[i][0] && y == destroyer[i][1] ){
               console.log("You've sinked the Destroyer ship! :D");
-              sea[90][3] = "x";
-              sea[90][4] = "x";
+              
+              for ( k = 0 ; k <= destroyer.length -1 ; k++ ){
+                for ( l = 0 ; l <= destroyer[k].length ; l++ ){
+                  sea[ destroyer[k][0] ][ destroyer[k][1] ] = "x";
+                }
+              }
+
             }
           }
         }
 
   }else if ( ask == "x" ){
-    console.log("You've already sinked this ship, keep trying")
+    console.log("You've already sinked this ship, keep trying");
   }else{
     console.log("You've missed :(");
   }
 
-
-  // for ( i = 0 ; i <= ships.length -1 ; i++ ){
-  //   for ( j = 0 ; j <= ships[i].length -1 ; j++ ){
-  //     for( k = 0 ; k <= ships[i][j].length -1 ; k++ ){
-  //           if( x == carrier[j][0] && y == carrier[j][1] ){
-  //             console.log("You've sinked the Carrier ship! :D");
-  //             sea[28][5] = "x";
-  //             sea[28][6] = "x";
-  //             sea[28][7] = "x";
-  //             sea[28][8] = "x";
-  //             sea[28][9] = "x";
-  //           }else if( x == battleship[j][0] && y == battleship[j][1] ){
-  //             console.log("You've sinked the Battleship ship! :D");
-  //             sea[0][3] = "x";
-  //             sea[1][3] = "x";
-  //             sea[2][3] = "x";
-  //             sea[3][3] = "x";
-  //           }else if( x == cruiser[j][0] && y == cruiser[j][1] ){
-  //             console.log("You've sinked the Cruiser ship! :D");
-  //             sea[43][88] = "x";
-  //             sea[43][89] = "x";
-  //             sea[43][90] = "x";
-  //           }else if( x == submarine[j][0] && y == submarine[j][1] ){
-  //             console.log("You've sinked the Submarine ship! :D");
-  //             sea[14][0] = "x";
-  //             sea[14][1] = "x";
-  //             sea[14][2] = "x";
-  //           }else if( x == destroyer[j][0] && y == destroyer[j][1] ){
-  //             console.log("You've sinked the Destroyer ship! :D");
-  //             sea[90][3] = "x";
-  //             sea[90][4] = "x";
-  //           }
-  //           else {
-  //             console.log("You've missed :(");
-  //           }
-  //     }
-  //   }
-  // }
 
 });
