@@ -1,7 +1,7 @@
 /* FIND SINKED SHIP IN A MATRIX */
 
 
-// First I create the multidimentional array of 100x100 with 0's in every position
+////// First I create the multidimentional array of 100x100 with 0's in every position
 var sea = [];
 var row = [];
 
@@ -12,7 +12,21 @@ for ( i = 0 ; i < 100 ; i++ ){
   sea.push(row.slice());
 }
 
-console.log('WELCOME TO BATTLESHIP MATRIX');
+// Draw the board to show in the HTML
+var board = document.getElementById('board');
+
+for( i = 0 ; i < sea.length ; i++ ){
+  var templateRow = document.createElement('ul');
+  board.appendChild(templateRow);
+  for( j = 0 ; j < sea[i].length ; j++ ){
+    var templateColumn = document.createElement('li');
+    templateRow.appendChild(templateColumn);
+    templateColumn.id = i + "-" + j;
+    templateColumn.className = "boxBlank";
+  }
+}
+
+
 
 
 
@@ -51,6 +65,8 @@ console.log(sea);
 
 
 
+
+
 ////// Clicking on the button runs the function that checks for a coincidence
 
 var button = document.getElementById('submitPositions');
@@ -68,6 +84,10 @@ function sinkShip(shipName, shipNameString, x, y){
         for ( k = 0 ; k <= shipName.length - 1; k++ ){
           for ( l = 0 ; l <= shipName[k].length; l++ ){
             sea[ shipName[k][0] ][ shipName[k][1] ] = "x";
+            var m = shipName[k][0];
+            var n = shipName[k][1];
+            var toSink = document.getElementById(m + "-" + n);
+            toSink.className = "boxSinked";
           }
         }
 
