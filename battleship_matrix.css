@@ -17,7 +17,7 @@ body{
 }
 .container{
   width:100%;
-  padding:0 7%;
+  /* padding:0 7%; */
 }
 .col{
   width:50%;
@@ -79,18 +79,27 @@ button:hover{
 }
 
 .boxBlank{background-color:#ddd;}
+.boxBlank:hover{
+  background-color:#919191;
+  cursor:pointer;
+}
 .boxSinked{background-color:#cc3030;}
+.boxMissed{background-color:#fff;}
 
 #board{margin-bottom:50px;}
 ul{
   margin: 0;
   padding: 0;
-  height: 5px;
+  height: 20px;
 }
 li{
-  border: 1px solid white;
   list-style-type: none;
-  width: 3px;
-  height: 3px;
   display: inline-block;
+}
+li a{
+  border: 1px solid white;
+  width: 18px;
+  height: 18px;
+  display:block;
+  font-size:6px;
 }
