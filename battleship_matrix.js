@@ -1,7 +1,7 @@
 /* FIND SINKED SHIP IN A MATRIX */
 
 
-////// First I create the multidimentional array of 100x100 with 0's in every position
+////// First I create the multidimentional array of 20x20 with 0's in every position
 var sea = [];
 var row = [];
 
