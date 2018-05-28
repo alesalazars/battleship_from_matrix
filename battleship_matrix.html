@@ -25,23 +25,79 @@
 
         <div class="col">
           <div class="float-left">
-              <h2>Welcome to Battleship Matrix</h2>
-              <p>The board is 30 spaces wide and 30 spaces high, made on a multidimensional array. All coordinates have a <span>0</span> in them, except for the ones that have a ship which have a number <span>1</span>.</p>
-              <p>The ships that exist in this board are: <strong>Carrier</strong>, <strong>Battleship</strong>, <strong>Cruiser</strong>, <strong>Submarine</strong> and <strong>Destroyer</strong>.</p>
-              <p>Ask for a position on the board and the console will answer wether you sinked a ship or not. If you hit a position that belongs to a ship you sink the entire ship.</p>
+            <h2>Welcome to Battleship Matrix</h2>
+            <p>The board is 20 spaces wide and 20 spaces high, made on a multidimensional array. All coordinates have a <span>0</span> in them, except for the ones that have a ship which have a number <span>1</span>.</p>
+            <p>Click on the board and the console will answer wether you sinked a ship or not. If you hit a position that belongs to a ship you sink the entire ship.</p>
+            <p>The ships that exist in this board are:</p>
+            
+            <div id="carrierToCrossOut" class="cheatSheet">
               <div class="col">
-                <div class="float-right">
-                  <label for="xPosition">Position X:</label>
-                  <input id="xPosition" type="text">
-                </div>
+                <h5>Carrier</h5>
               </div>
               <div class="col">
-                <div class="float-left">
-                  <label for="yPosition">Position Y:</label>
-                  <input id="yPosition" type="text">
-                </div>
+                <ul class="float-left">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
               </div>
-              <button id="submitPositions">Check position</button>        
+            </div>
+
+            <div id="battleshipToCrossOut" class="cheatSheet">
+              <div class="col">
+                <h5>Battleship</h5>
+              </div>
+              <div class="col">
+                <ul class="float-left">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="cruiserToCrossOut" class="cheatSheet">
+              <div class="col">
+                <h5 id="cruiserToCrossOut">Cruiser</h5>
+              </div>
+              <div class="col">
+                <ul class="float-left">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="submarineToCrossOut" class="cheatSheet">
+              <div class="col">
+                <h5>Submarine</h5>
+              </div>
+              <div class="col">
+                <ul class="float-left">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="destroyerToCrossOut" class="cheatSheet">
+              <div class="col">
+                <h5>Destroyer</h5>
+              </div>
+              <div class="col">
+                <ul class="float-left">
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <button id="resetBoard">Reset board</button>        
           </div>
         </div>
 

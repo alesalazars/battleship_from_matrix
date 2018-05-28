@@ -55,12 +55,11 @@ input{
   display:block:
 }
 button{
-  display:block;
   padding:15px;
   font-size:20px;
   background-color:#29bbac;
   color:#fff;
-  margin:20px auto;
+  margin:50px auto 20px auto;
   border-radius:6px;
   border:none;
   -webkit-box-shadow: 0px 3px 0px 0px rgba(27,112,103,1);
@@ -79,7 +78,7 @@ button:hover{
 }
 
 .boxBlank{background-color:#ddd;}
-.boxBlank:hover{
+#board .boxBlank:hover{
   background-color:#919191;
   cursor:pointer;
 }
@@ -90,16 +89,38 @@ button:hover{
 ul{
   margin: 0;
   padding: 0;
-  height: 20px;
+  height: 24px;
 }
 li{
   list-style-type: none;
   display: inline-block;
+  float:left;
 }
-li a{
+#board ul li a{
   border: 1px solid white;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   display:block;
   font-size:6px;
 }
+
+.cheatSheet li{
+  border: 1px solid white;
+  width: 22px;
+  height: 22px;
+  background-color:#ddd;
+}
+.cheatSheet .col{
+  margin:10px 0 0 0;
+  height:25px;
+}
+.cheatSheet h5{
+  margin:0 15px 0 0;
+  line-height: 25px;
+  float:right;
+}
+.crossedOut{
+  text-decoration: line-through;
+  float:right;
+}
+.boxesSinked li{background-color:#cc3030;}
