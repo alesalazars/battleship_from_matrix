@@ -43,6 +43,36 @@ for( i = 1 ; i < sea.length ; i++ ){
 
 ////// Set coordenates for the ships and put 1's in them
 
+// Form the multidimentional arrays for each ship with random coordinates every time
+
+var carrier = [];
+var battleship = [];
+var cruiser = [];
+var submarine = [];
+var destroyer = [];
+
+function fillShipCoordinatesVertical(shipName, shipNameLength){
+  var randomNumberX = Math.floor((Math.random() * 15) + 1);
+  var randomNumberY = Math.floor((Math.random() * 15) + 1);
+  for ( i = 0 ; i < shipNameLength; i++ ){
+    var innerArray = [];
+    innerArray.push(randomNumberX);
+    innerArray.push(randomNumberY + i);
+    shipName.push(innerArray);
+  }
+}
+function fillShipCoordinatesHorizontal(shipName, shipNameLength){
+  var randomNumberX = Math.floor((Math.random() * 15) + 1);
+  var randomNumberY = Math.floor((Math.random() * 15) + 1);
+  for ( i = 0 ; i < shipNameLength; i++ ){
+    var innerArray = [];
+    innerArray.push(randomNumberX + i);
+    innerArray.push(randomNumberY);
+    shipName.push(innerArray);
+  }
+}
+
+// Fill with 1's the coordinates in the sea matrix (visible on console)
 function fillWithOnes(shipName){
   for ( i = 0 ; i <= shipName.length - 1; i++ ){
     for ( j = 0 ; j <= shipName[i].length; j++ ){
@@ -52,23 +82,23 @@ function fillWithOnes(shipName){
 }
 
 //Carrier ship
-var carrier =[ [18,5], [18,6], [18,7], [18,8], [18,9] ];
+fillShipCoordinatesVertical(carrier, 5);
 fillWithOnes(carrier);
 
 //Battleship ship
-var battleship =[ [1,3], [2,3], [3,3], [4,3] ];
+fillShipCoordinatesHorizontal(battleship, 4);
 fillWithOnes(battleship);
 
 //Cruiser ship
-var cruiser =[ [8,20], [9,20], [10,20] ];
+fillShipCoordinatesVertical(cruiser, 3);
 fillWithOnes(cruiser);
 
 //Submarine ship
-var submarine =[ [14,1], [14,2], [14,3] ];
+fillShipCoordinatesHorizontal(submarine, 3);
 fillWithOnes(submarine);
 
 //Destroyer ship
-var destroyer =[ [14,13], [14,14] ];
+fillShipCoordinatesVertical(destroyer, 2);
 fillWithOnes(destroyer);
 
 
@@ -141,6 +171,8 @@ function templateCoordinateClick(j, i){
   }
 
 };
+
+
 
 
 // Reset button
