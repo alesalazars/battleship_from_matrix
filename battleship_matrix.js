@@ -50,27 +50,47 @@ var battleship = [];
 var cruiser = [];
 var submarine = [];
 var destroyer = [];
+var shipList = [];
 
-function fillShipCoordinatesVertical(shipName, shipNameLength){
-  var randomNumberX = Math.floor((Math.random() * 15) + 1);
-  var randomNumberY = Math.floor((Math.random() * 15) + 1);
+
+
+function fillShipCoordinates(shipName, shipNameLength, direction){
+  let randomNumberX = Math.floor((Math.random() * 15) + 1);
+  let randomNumberY = Math.floor((Math.random() * 15) + 1);
+
   for ( i = 0 ; i < shipNameLength; i++ ){
-    var innerArray = [];
-    innerArray.push(randomNumberX);
-    innerArray.push(randomNumberY + i);
+    let innerArray = [];
+    if( direction == 'horizontal'){
+      innerArray.push(randomNumberX);
+      innerArray.push(randomNumberY + i);
+    }else{
+      innerArray.push(randomNumberX + i);
+      innerArray.push(randomNumberY);
+    }
     shipName.push(innerArray);
   }
+
+  // for ( let j = 0 ; j < shipName.length; j++ ){
+  //   for( let k = 0 ; k < shipList.length ; k++ ){
+  //     while( shipName[j] === shipList[k] ){
+  //       // shipName = [];
+  //       // let randomNumberX = Math.floor((Math.random() * 15) + 1);
+  //       // let randomNumberY = Math.floor((Math.random() * 15) + 1);
+  //       // for ( l = 0 ; l < shipName.length; l++ ){
+  //       //   var innerArray = [];
+  //       //   innerArray.push(randomNumberX);
+  //       //   innerArray.push(randomNumberY + l);
+  //       //   shipName.push(innerArray);
+  //       // }
+  //       console.log('wa');
+  //     }
+  //   }
+  // }
+  
+  shipList.push(shipName);
 }
-function fillShipCoordinatesHorizontal(shipName, shipNameLength){
-  var randomNumberX = Math.floor((Math.random() * 15) + 1);
-  var randomNumberY = Math.floor((Math.random() * 15) + 1);
-  for ( i = 0 ; i < shipNameLength; i++ ){
-    var innerArray = [];
-    innerArray.push(randomNumberX + i);
-    innerArray.push(randomNumberY);
-    shipName.push(innerArray);
-  }
-}
+
+
 
 // Fill with 1's the coordinates in the sea matrix (visible on console)
 function fillWithOnes(shipName){
@@ -81,28 +101,47 @@ function fillWithOnes(shipName){
   }
 }
 
+
+
+
 //Carrier ship
-fillShipCoordinatesVertical(carrier, 5);
+function fillFirstShip(shipName, shipNameLength){
+  let randomNumberX = Math.floor((Math.random() * 15) + 1);
+  let randomNumberY = Math.floor((Math.random() * 15) + 1);
+  for ( i = 0 ; i < shipNameLength; i++ ){
+    let innerArray = [];
+    innerArray.push(randomNumberX);
+    innerArray.push(randomNumberY + i);
+    shipName.push(innerArray);
+  }
+  shipList.push(shipName);
+};
+fillFirstShip(carrier, 5);
 fillWithOnes(carrier);
 
+
 //Battleship ship
-fillShipCoordinatesHorizontal(battleship, 4);
+fillShipCoordinates(battleship, 4, 'horizontal');
 fillWithOnes(battleship);
 
+
 //Cruiser ship
-fillShipCoordinatesVertical(cruiser, 3);
+fillShipCoordinates(cruiser, 3, 'vertical');
 fillWithOnes(cruiser);
 
+
 //Submarine ship
-fillShipCoordinatesHorizontal(submarine, 3);
+fillShipCoordinates(submarine, 3, 'horizontal');
 fillWithOnes(submarine);
 
+
 //Destroyer ship
-fillShipCoordinatesVertical(destroyer, 2);
+fillShipCoordinates(destroyer, 2, 'vertical');
 fillWithOnes(destroyer);
 
 
 console.log(sea);
+console.log(shipList);
 
 
 
